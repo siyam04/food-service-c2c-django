@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <!-- profileDetails -->
+    <div class="profile mb-5">
+        <div class="card p-3">
+            <h1>প্রোফাইল এডিট করুন</h1>
+            <div class="showcase1">
+                <div class="preview img-wrapper"></div>
+
+                <div class="file-upload-wrapper text-center py-4">
+                {{form.profile_image}}
+                </div>
+            </div><hr>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="">নাম</label>
+                    {{form.user_name}}
+                </div>
+                <div class="form-group">
+                    <label for="">ভূমিকা</label>
+                    {{ form.role }}
+                </div>
+                <div class="form-group">
+                    <label for="">ফোন</label>
+                    {{ form.contact_no }}
+                </div>
+                <div class="form-group">
+                    <label for="">ই-মেইল</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="">এলাকা</label>
+                    {{ form.area }}
+                </div>
+
+                <button type="submit" class="btn btn-dark my-2">সেইভ করুন</button>
+            </form>
+        </div>
+    </div>
+    <!-- profileDetails -->
+</div>
+
+{% endblock %}

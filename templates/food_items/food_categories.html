@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Categories{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            {% for category in categories %}
+                <a href="{% url 'all-food-items' %}">{{ category.category_name }}</a><br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

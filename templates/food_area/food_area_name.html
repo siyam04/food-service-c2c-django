@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area</title>
+</head>
+<body>
+    <h1>এলাকা</h1>
+    <hr>
+    {% for areas in area_name %}
+        এলাকা: {{ areas.area_name }}<br>
+        জিপ কোড: {{ areas.zip_code }}<br>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>

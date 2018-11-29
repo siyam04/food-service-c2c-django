@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Add Food Items{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>নতুন আইটেম যোগ করুন</h1>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ add_items_info.as_p }}
+                <button class="btn btn-dark btn-sm" type="submit" style="100%">যোগ করুন</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

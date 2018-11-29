@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Home{% endblock %}</title>
+
+{% block content %}
+
+    <!---- Main Body ---->
+    <div class="main-content">
+      <div class="overlay">
+        <div class="container">
+          <div class="showcase">
+            <h5 class=''>ঘরে তৈরি খাবার এখন আপনার হাতের মুঠোয়</h5>
+              <h1 style="color: #0be881"><a href="{% url 'all-food-items' %}">এখনি অর্ডার করুন</a></h1>
+            <h6><b>স্বাস্থ্যকর | বিশুদ্ধ | সাধ্যের মধ্যে</b></h6>
+              <!---- Search ---->
+            <form class="search input-group mt-4" method="GET" action="{% url 'home' %}">
+              <input type="text" name='q' class="form-control" placeholder="আপনি কি খুঁজছেন?...">
+              <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+            </form>
+              <!---- Search ---->
+          </div>
+
+          <div class="product mt-5">
+            <div class="product-title">
+              <h3>সব নতুন আইটেমগুলি</h3>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-8 mt-3">
+                <!-- loop -->
+                <div class="left-food-item p-3">
+                  {% for foods in all_food_items %}
+                    <!-- inject food image -->
+                  <div class="card mb-3 p-2">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-5">
+                          <img class="img-thumbnail" src="{{ foods.food_image.url }}">
+                      </div>
+                      <div class="col-xs-12 col-md-7 text-left">
+                        <h2 class="food-name">{{ foods.name }}</h2>
+                        <!-- inject food price -->
+                        <b>({{ foods.status }})</b>
+                        <p class="food-price text-secondary">{{ foods.price }} টাকা/প্রতিসেট  (সর্বনিম্ন অর্ডারের পরিমাণ: {{ foods.minimum_quantity }} সেট)</p>
+
+                        <!-- Button -->
+                        <a class='btn btn-success btn-sm' target="_blank" href='{% url 'food-details' foods.id %}'>বিস্তারিত</a>
+                        <a class='btn btn-danger btn-sm' target="_blank" href='{% url 'order-form' foods.id %}'>অর্ডার করুন</a>
+                        <!-- Button -->
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                <!-- loop -->
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4 mt-3">
+                    <div class="category text-white text-center">
+                          <h3 class="pt-3">ক্যাটাগরি</h3> <hr>
+                          {% for category in all_category %}
+                            <ul>
+                              <li>
+                                <a href="{% url 'categorywise-items' category.id %}">{{ category.category_name }}</a></li>
+                            </ul>
+                          {% endfor %}
+                      </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paginator -->
+          {% include 'paginator/paginator.html' with page=all_food_items %}
+          <!-- Paginator -->
+        </div>    
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.887016455105!2d90.36535051467365!3d23.751408094655403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf502e922537%3A0xab8a4ec73cf72870!2sState+University+of+Bangladesh!5e0!3m2!1sen!2sbd!4v1542374740718" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+    </div>
+
+
+
+
+<!---- Main Body ---->
+
+{% endblock %}

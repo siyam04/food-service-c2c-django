@@ -1,0 +1,105 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body class="bg-dark">
+
+    <div class="top-content">
+      <div class="container-fluid brand">
+        <h1 class="">ঘরের খাবার</h1>
+      </div>
+        <!---- NavBar ---->
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span><i class="fa fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li><a href="{% url 'home' %}">হোম</a></li>
+{#                <li><a href="{% url 'all-food-items' %}">সব আইটেম</a></li>#}
+                <li><a href="{% url 'delivery-point' %}">ডেলিভারি-পয়েন্ট</a></li>
+    
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'add-items' %}">নতুন আইটেম যোগ করুন</a></li>
+                <li><a href="{% url 'profile' %}" style="color: #ff3f34">@{{ request.user.username }}</a></li>
+                <li><a href="{% url 'logout' %}" style="color: #4f5b69">সাইন-আউট</a></li>
+                {% else %}
+                <li><a href="{% url 'signup' %}" style="color: #ff3f34">লগইন/রেজিস্ট্রেশন</a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </nav>
+        <!---- NavBar ---->
+    </div>
+
+   {% block content %}
+
+   {% endblock %}
+
+<!---- Footer ---->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <h2 class="">সাবস্ক্রাইব করুন</h2> <hr>
+            <div class="subscription lightgreen">
+                <form>
+                  <div class="input-group">
+                    <input name="email" type="text" class="form-control" placeholder='আপনার ই-মেইল লিখুন...'>
+                    <a class="btn btn-danger pb-2" href="{% url 'subscribe' %}" type="button">সাবস্ক্রাইব</a>
+                  </div>
+                </form>
+              </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="social-link">
+            <h2 class="">যোগাযোগ</h2> <hr>
+            <address>
+              <span class="text-warning">DevsCave, </span>
+              Dhaka<br>
+              01516 113959<br>
+              workstation844@gmail.com
+            </address>
+            <ul>
+              <li><a href="https://goo.gl/uZ8fm5"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://github.com/siyam04/food-service-system-django"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://bitbucket.org/team_devscave"><i class="fab fa-bitbucket"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/abdullah-al-galib"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="developer text-center lightgreen">
+    <p class="py-2 m-0 text-dark">Copyright ©2018 all rights reserved |<span style='font-weight: bold; color: orangered'> DevsCave </span> </p>
+  </div>
+<!---- Footer ---->
+
+  <!-- script -->
+  <script src="{% static 'script/profile.js' %}"></script>
+  <script src="{% static 'script/uploadImage.js' %}"></script>
+  <!-- script -->
+</body>
+</html>

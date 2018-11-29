@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile Details{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profile mb-5">
+        <div class="card p-3">
+            <h1 class='text-center'>প্রোফাইল</h1>
+            <div class="showcase1">
+                <div class="preview img-wrapper">
+                    {% if profile.profile_image %}
+                        <img src="{{ profile.profile_image.url }}" alt="profile_pic">
+                    {% endif %}
+                </div><hr>
+            </div>
+            <form>
+                <table class="text-left">
+                    <tr class="">
+                        <th><label for="">নাম</label></th>
+                        <td><label for="">{{ profile.user_name }}</label></td>
+                    </tr>
+                    <tr>
+                        <th><label for="">ভূমিকা</label></th>
+                        <td><label for="">{{ profile.role }}</label></td></tr>
+                    </tr>
+                    <tr>
+                        <th><label for="">ফোন</label></th>
+                        <td><label for="">{{ profile.contact_no }}</label></td></tr>
+                    </tr>
+                    <tr>
+                        <th><label for="">ই-মেইল</label></th>
+                        <td><label for="">{{ profile.email }}</label></td></tr>
+                    </tr>
+                    <tr>
+                        <th><label for="">এলাকা</label></th>
+                        <td><label for="">{{ profile.area }}</label></td>
+                    </tr>
+                </table>
+                {% if request.user.username == profile.user.username %}
+                    <a class="btn btn-dark mt-4" href="{% url 'profile-edit' %}">এডিট করুন</a>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>SignIn / SignUp</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+
+    <!-- loginForm -->
+    <div class="loginBox">
+        <div class="row mb-3">
+            <div class="col">
+                <button id="signin-button">লগইন</button>
+            </div>
+            <div class="col">
+                <button id="signup-button">রেজিস্ট্রেশন</button>
+            </div>
+        </div>
+
+        <div>
+            <form id="signup-form" method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <div class="form-group mt-4">
+                    <label class="text-dark">ফার্স্ট-নেইম</label>
+                    <input name="firstname" class="form-control" type="text" placeholder="enter firstname">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="text-dark">লাস্ট-নেইম</label>
+                    <input name="lastname" class="form-control" type="text" placeholder="enter lastname">
+                </div>
+
+                 <div class="form-group mt-4">
+                    <label class="text-dark">ই-মেইল</label>
+                    <input name="email" class="form-control" type="email" placeholder="enter email">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="text-dark">ইউজার-নেইম</label>
+                    <input name="username" class="form-control" type="text" placeholder="enter username">
+                </div>
+
+                <div class="form-group">
+                    <label for="">পাসওয়ার্ড</label>
+                    <input name="password" class="form-control" type="password" placeholder="password">
+                </div>
+
+                <div class="form-group pb-3">
+                    <label for="">কনফার্ম পাসওয়ার্ড</label>
+                    <input name="repassword" class="form-control" type="password" placeholder="Confirm password">
+                </div>
+
+                <button class="btn btn-dark" type="submit">রেজিস্ট্রেশন করুন</button>
+            </form>
+
+            <form id="signin-form" method="POST" action="{% url 'signin' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="">ইউজার-নেইম</label>
+                    <input name="username" class="form-control" type="text" placeholder="username">
+                </div>
+
+                <div class="form-group pb-3">
+                    <label for="">পাসওয়ার্ড</label>
+                    <input name="password" class="form-control" type="password" placeholder="password">
+                </div>
+
+                <button class="btn btn-dark" type="submit">লগইন করুন</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Javascript -->
+    <script>
+        init();
+
+        function init() {
+            $("#signin-button").css("border-bottom", "3px solid black");
+            $("#signin-form").css("display", "block");
+            }
+
+            $("#signin-button").on("click", function() {
+            $(this).css("border-bottom", "3px solid black");
+            $("#signup-button").css("border-bottom", "3px solid white");
+
+            $("#signup-form").css("display", "none")
+                $("#signin-form").slideDown(400, function() {
+                $(this).css("display", "block");
+            });
+            });
+
+            $("#signup-button").on("click", function() {
+            $(this).css("border-bottom", "3px solid black");
+            $("#signin-button").css("border-bottom", "3px solid white");
+
+            $("#signin-form").css("display", "none");
+            $("#signup-form").slideDown(400, function() {
+                $(this).css("display", "block");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Quicksand');
+
+*{
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+.lsNone { list-style: none; }
+.tdNone { text-decoration: none; }
+.right { float: right; }
+.left { float: left; }
+.lightblue { background-color: rgb(223, 247, 255); }
+
+.body {
+    width: 100%;
+	height: 100%;
+	background-color: #c080f57e;
+}
+
+.showcase1 {
+    font-size: 20px;
+    line-height: 1.4;
+    padding-top: 0.5rem;
+}
+
+.profileDetails .preview, .profile .preview {
+    /* display: table; */
+    width: 170px;
+    height: 170px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 0px 2px rgba(33, 122, 105, 1);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+.profileDetails img, .profile img {
+    width: 100%;
+    height: 100%;
+}
+
+.profileDetails .file-upload-wrapper,
+.profile .file-upload-wrapper {
+    /* position: relative;
+    z-index: 5;
+    display: block;
+    width: 152px;
+    height: 30px;
+    margin: 25px auto;
+    border-radius: 0px;
+    border: 1px dashed rgba(33, 122, 105, 1); */
+    font-size: 0.9rem;
+}
+
+.profileDetails .file-upload-native,
+.profileDetails .file-upload-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.profileDetails input[type="file"]::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+.profileDetails .file-upload-native:focus,
+.profileDetails .file-upload-text:focus {
+    outline: none;
+}
+
+.profileDetails .file-upload-text {
+    z-index: 10;
+    padding: 5px 15px 8px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    border: 0;
+    background-color: transparent;
+}
+
+.file-upload-wrapper input.file-upload-native {
+    z-index: 15;
+    opacity: 0;
+}
+
+/* userinfo */
+/*UserInfo*/
+
+input::placeholder {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+	font-family: 'Quicksand';
+	color: black;
+}
+
+/* /////////////////////////// */
+
+
+/* ////////////////  image  ///////////////////// */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+#img-upload{
+    width: 100%;
+}
+
+/* //////////////////  image  /////////////////// */

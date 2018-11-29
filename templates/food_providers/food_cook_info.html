@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Cooks</title>
+</head>
+<body style="background-color: cadetblue">
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>আমাদের সকল শেফ</h1>
+            <hr>
+            {% for cooks in cook_info %}
+            <div class="row">
+                <div class="col-xs-12 col-md-7">
+                    <img class="img-thumbnail" src="{{ cooks.cook_image.url }}" alt="image" width="400px" height="300px">
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <table>
+                        <tr>
+                            <th>নাম</th>
+                            <td>{{ cooks.cook_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>ফোন</th>
+                            <td>{{ cooks.contact_no }}</td>
+                        </tr>
+                        <tr>
+                            <th>এলাকা</th>
+                            <td>{{ cooks.area }}</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

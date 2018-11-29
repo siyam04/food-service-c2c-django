@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Order Form{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1 class="text-center">অর্ডারের জন্য তথ্যগুলি সঠিক ভাবে পুরন করুন</h1>
+
+            <form class="orderForm py-4" method="post">
+                {% csrf_token %}
+                {{ order_form_info.as_p }}
+                <button class="btn btn-dark btn-sm" type="submit" style="100%">অর্ডার করুন</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

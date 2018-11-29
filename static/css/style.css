@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat|Rubik:700');
+@import url('https://fonts.googleapis.com/css?family=Dosis|Quicksand');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../food_images/img1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: rem;
+}
+
+header {
+  background: url(../food_images/img1.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 150px;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  font-size: 3rem;
+  color: white;
+  font-family: "Lobster", sans-serif;
+  text-align: center;
+}
+
+a.nav-link {
+  position: absolute;
+  color: white;
+  top: 10px;
+  right: 67px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.8px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background-color: #59B210;
+}
+a.nav-link:hover  {
+  transition: 0.5s;
+  color: white;
+  background-color: rgb(65, 131, 11);
+}
+
+.top-content {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+}
+
+.brand {
+  width: 100%;
+  height: 150px;
+  color: white;
+  background: #2c3e50;
+  font-size: 3rem;
+  font-family: 'Lobster';
+  text-align: center;
+  padding-top: 2rem;
+}
+.top-content nav {
+  width: 75%;
+  position: relative;
+  line-height: 50px;
+  background-color: #59B210;
+  text-align: center;
+  margin: -30px auto;
+  font-family: 'Quicksand', sans-serif;
+}
+.top-content nav ul {
+  list-style: none;
+  border-bottom: 5px solid rgb(65, 131, 11);
+}
+.top-content nav ul li {
+  display: inline-block;
+  width: 120px;
+}
+.top-content nav ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.top-content nav ul li:hover a {
+  transition: 0.5s;
+  border-radius: 30px 0 30px 0;
+  background-color: #59B210;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.main-content {
+  padding: 3rem;
+  position: relative;
+}
+.showcase {
+  background-image: url(../food_images/img2.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  margin-top: 150px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.showcase h5 {
+  font-family: 'Rubik';
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding-top: 5rem;
+}
+.showcase h1 {
+  font-family: 'Rubik';
+  font-size: 4rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.product {
+  font-family: 'Montserrat';
+}
+.product-title {
+  border-bottom: 5px solid rgb(65, 131, 11);
+}
+.product-title h3 {
+  color: white;
+  margin: 0;
+  width: 200px;
+  line-height: 50px;
+  background-color: #59B210;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.product img {
+  width: 100%;
+  height: 144px;
+}
+.product .row .col {
+    margin: 2rem auto;
+}
+.product .card {
+  background-color: #;
+}
+.product .card:hover {
+  border: 3px solid #59B210;
+}
+
+.food-name {
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  color: #000;
+  font-weight: bold;
+}
+.food-price {
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+.category {
+  background: #2c3e50;
+  border: 4px solid #17202b;
+  border-radius: 10px;
+}
+.category ul li {
+  padding: 0;
+  list-style-type: none;
+}
+.category ul li a {
+  text-decoration: none;
+  line-height: 50px;
+  color: white;
+  display: block;
+  transition: all 400ms ease;
+  transform: scale(0.9);
+}
+.category ul li:hover a {
+  background: coral;
+  transform: scale(1);
+}
+
+.map iframe {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.subscription {
+  width: 90%;
+  padding: 1rem;
+  background-color: #59B210;
+  text-align: center;
+
+}
+::placeholder {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: 'Quicksand';
+}
+.subscription .input-group input {
+  border-radius: 3px 0 0 3px;
+}
+.subscription .input-group a {
+  border-radius: 0 3px 3px 0;
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #000;
+  color: white;
+  position: relative;
+}
+
+.footer i {
+  font-size: 1.5rem;
+  padding-right: 0.9rem;
+}
+
+.footer .social-link ul, .footer .cuisine ul {
+  list-style: none;
+  padding: 0;
+  float: left;
+}
+.footer .social-link ul li {
+  display: inline-block;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+.footer address {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+.all-food-items, .delivery, .profileDetails {
+    width: 50%;
+    margin: 2rem auto;
+}
+
+.all-food-items h3 {
+    font-weight: bold;
+}
+
+.profileDetails table {
+    width: 100%;
+}
+
+.profileDetails .form-details {
+    width: 50%;
+    margin: auto;
+}
+
+.profileDetails .card ul li {
+  list-style: none;
+  line-height: 40px;
+}
+
+.product .card {
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all  400ms ease;
+  -ms-transition: all  400ms ease;
+  -o-transition: all  400ms ease;
+  transition: all  400ms ease;
+}
+.product .card:hover {
+  transform: scale(0.95);
+}
+
+
+/* main.css */
+/* {
+  @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat|Rubik:700');
+@import url('https://fonts.googleapis.com/css?family=Dosis|Quicksand');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../food_images/img1.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.lightgreen { background-color: #0be881; }
+.deepgreen { background-color: #06a85d; }
+.midnightColor { background-color: #2c3e50; }
+.midnightColorDark { background-color: #17202b; }
+.lightred { background-color: #ff3f34; }
+.lightyellow { background-color: #ffdd59; }
+
+.top-content {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+
+.brand {
+  width: 100%;
+  height: 110px;
+  color: white;
+  background: #2c3e50;
+  font-size: 3rem;
+  font-family: 'Lobster';
+  text-align: center;
+  padding-top: 0.8rem;
+  border-bottom: 4px solid #ffdd59;
+}
+
+
+.top-content nav {
+  width: 75%;
+  line-height: 55px;
+  background-color: #0be881;
+  margin: -33px auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+.top-content nav ul {
+  list-style: none;
+  border-bottom: 5px solid #06a85d;
+}
+.top-content nav ul li {
+  display: inline-block;
+}
+.top-content nav ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  color: black;
+  padding: 0 1rem;
+}
+.top-content nav ul li:hover a {
+  transition: 0.5s;
+  color: white;
+  background: #06a85d;
+  border-radius: 30px 0 30px 0;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+
+.main-content {
+  margin-top: 160px;
+  position: relative;
+}
+
+.showcase {
+  background-image: url(../food_images/img2.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-top: 5rem;
+  border-left: 5px solid #06a85d;
+  border-right: 5px solid #06a85d;
+  border-bottom: 5px solid #06a85d;
+}
+.main-content .showcase h5 {
+  font-family: 'Rubik';
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.main-content .showcase h1 {
+  font-family: 'Rubik';
+  font-size: 4rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.main-content .showcase h6 {
+  font-size: 1.2rem;
+}
+
+.product {
+  position: relative;
+  font-family: 'Montserrat';
+}
+.product-title {
+  background: #f9fcff;
+  border-bottom: 5px solid #06a85d;
+}
+.product-title h3 {
+  color: black;
+  margin: 0;
+  width: 200px;
+  line-height: 50px;
+  background-color: #0be881;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+}
+.product h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2rem;
+}
+.product img {
+  width: 100%;
+  height: 144px;
+}
+.product .row .col {
+    margin: 2rem auto;
+}
+
+.product .card {
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all  400ms ease;
+  -ms-transition: all  400ms ease;
+  -o-transition: all  400ms ease;
+  transition: all  400ms ease;
+  transform: scale(1);
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+.product .card:hover {
+  transform: scale(0.95);
+  border: 3px solid #17202b;
+}
+.food-name {
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  color: #000;
+  font-weight: bold;
+}
+.food-price {
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+.category, .left-food-item {
+  background: #f9fcff;
+  border: 4px solid #17202b;
+  border-radius: 10px;
+}
+.category ul li {
+  padding: 0;
+  list-style-type: none;
+}
+.category ul li a {
+  text-decoration: none;
+  line-height: 50px;
+  font-family: 'Rubik', sans-serif;
+  color: #17202b;
+  display: block;
+  transition: all 400ms ease;
+  transform: scale(0.9);
+  font-size: 1.2rem;
+}
+.category ul li:hover a {
+  background: #ff3f34;
+  transform: scale(1);
+  color: white;
+  animation: left
+}
+.category h3 {
+  font-family: 'Rubik', sans-serif;
+  color: #17202b;
+}
+
+.map iframe {
+  width: 100%;
+  height: 410px;
+  position: relative;
+}
+.subscription {
+  width: 90%;
+  padding: 1rem;
+  background-color: #0be881;
+  text-align: center;
+  border-radius: 5px;
+}
+::placeholder {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: 'Quicksand';
+}
+.subscription .input-group {
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+.subscription .input-group input {
+  border-radius: 3px 0 0 3px;
+}
+.subscription .input-group a {
+  border-radius: 0 3px 3px 0;
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #2c3e50;
+  color: white;
+  position: relative;
+}
+
+.footer i {
+  font-size: 1.5rem;
+  padding-right: 0.9rem;
+}
+.footer .social-link ul, .footer .cuisine ul {
+  list-style: none;
+  padding: 0;
+  float: left;
+}
+.footer .social-link ul li {
+  display: inline-block;
+}
+.footer h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+.footer address {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.profileDetails table {
+    width: 100%;
+}
+
+.profileDetails .card ul li {
+  list-style: none;
+  line-height: 40px;
+}
+
+.profileDetails {
+  width: 960px;
+  margin: 0 auto;
+}
+.profileDetails .card {
+  margin-bottom: 20px;
+}
+
+.profileDetails .card table {
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
+}
+.profileDetails .card h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #17202b;
+}
+.profileDetails .card table th {
+  padding: 0.5rem 0;
+}
+.profileDetails .card table tr td {
+  padding-left: 1rem;
+}
+.profileDetails .card .btn {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.profileDetails .orderForm, .profileDetails form {
+  width: 50%;
+  margin: auto;
+}
+
+.profileDetails img {
+  height: 380px;
+}
+
+.profileDetails h2, .profileDetails h5 {
+  font-family: 'Rubik', sans-serif;
+}
+} */

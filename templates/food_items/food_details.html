@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Single Food Detail{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>{{ food_details_info.name }}</h1>
+            <div class="row">
+                <div class="col-xs-12 col-md-7">            
+                    <img class="img-thumbnail" src="{{ food_details_info.food_image.url }}" width="100%">
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <table>
+                        <tr>
+                            <th>ক্যাটাগরি</th>
+                            <td>{{ food_details_info.category }}</td>
+                        </tr>
+                        <tr>
+                            <th>সর্বনিম্ন অর্ডারের পরিমাণ</th>
+                            <td>{{ food_details_info.minimum_quantity }} সেট</td>
+                        </tr>
+                        <tr>
+                            <th>দাম</th>
+                            <td>{{ food_details_info.price }} টাকা/প্রতিসেট</td>
+                        </tr>
+                        <tr>
+                            <th>শেফ</th>
+                            <td>{{ food_details_info.provider }}</td>
+                        </tr>
+                        <tr>
+                            <th>ডেলিভারি পয়েন্ট</th>
+                            <td>{{ food_details_info.delivery_point }}</td>
+                        </tr>
+                        <tr>
+                            <th>এলাকা</th>
+                            <td>{{ food_details_info.area }}</td>
+                        </tr>
+                        <tr>
+                            <th>স্ট্যাটাস</th>
+                            <td>{{ food_details_info.status }}</td>
+                        </tr>
+                        <tr>
+                            <th>প্রকাশের তারিখ</th>
+                            <td>{{ food_details_info.posted_at }}</td>
+                        </tr>
+                    </table>
+                    <!-- Button -->
+                    <a class='btn btn-dark btn-sm mt-3 mb-0' target="_blank" href='{% url 'order-form' food_details_info.id %}' style="width: 100%">অর্ডার করুন</a>
+                    <!-- Button -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

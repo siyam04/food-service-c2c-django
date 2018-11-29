@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Order Confirmation{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1 style="background-color: #0be881">অর্ডার সফল হয়েছে!</h1>
+            <form action="">
+                <div class="alert alert-success text-center my-2" role="alert"> <strong>পেমেন্ট স্টেটমেন্ট</strong> </div>
+                <table class="my-3">
+                    <tr>
+                        <th>অর্ডার আইডি</th>
+                        <td>{{ order_details.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>অর্ডার করেছেন</th>
+                        <td>{{ order_details.client_info.client_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>খাবারের নাম</th>
+                        <td>{{ order_details.food_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>অর্ডারের পরিমাণ</th>
+                        <td>{{ order_details.quantity }}</td>
+                    </tr>
+                    <tr>
+                        <th>যিনি খাবার দিচ্ছেন</th>
+                        <td>{{ order_details.provider.cook_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>ডেলিভারি পয়েন্ট</th>
+                        <td>{{ order_details.delivery_point }}</td>
+                    </tr>
+                    <tr>
+                        <th>এলাকা</th>
+                        <td>{{ order_details.area.area_name }}</td>
+                    </tr>
+                    <tr>
+                        <th><hr>সর্বমোট দাম</th>
+                        <td><hr>{{ price }} টাকা</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

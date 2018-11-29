@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}All Food Items{% endblock %}</title>
+
+{% block content %}
+<div class="main-content">
+    <div class="profileDetails">
+        {% for foods in all_food_items %}
+        <div class="card p-3">
+            <h1>{{ foods.name }} ({{ foods.category }})  {{ foods.price }} টাকা/প্রতিসেট</h1>
+        <!-- inject food image -->
+            <div class="row pt-2">
+                <div class="col-xs-12 col-md-12 col-lg-7">                
+                    <img class="img-thumbnail" src="{{ foods.food_image.url }}" alt="image" width="100%" height="320px">
+                </div>
+                <div class="col-xs-12 col-md-12 col-lg-5 px-3">
+                    <!-- inject food name + category + price -->
+                    <!-- inject food provider -->
+                    <h2 class="">{{ foods.provider }}</h2>
+                    <!-- inject food delivery_point -->
+                    <h5 class="">{{ foods.delivery_point }}, {{ foods.area }}</h5>
+                    <!-- inject food posted_at -->
+                    <p class="lead">{{ foods.status }} (প্রকাশের তারিখ: {{ foods.posted_at }})</p>
+
+                    <!-- <p>How to inherit DeliveryPoint class's delivery_point_contact_no here??</p> -->
+
+                    <!-- Button -->
+                    <a class='btn btn-dark btn-sm' target="_blank" href="{% url 'food-details' foods.id %}">বিস্তারিত</a>
+                    <!-- Button -->
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
