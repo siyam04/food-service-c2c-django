@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-<title>{% block title %}Home{% endblock %}</title>
+<title>{% block title %} ঘরের খাবার {% endblock %}</title>
 
 {% block content %}
 
@@ -10,7 +10,7 @@
         <div class="container">
           <div class="showcase">
             <h5 class=''>ঘরে তৈরি খাবার এখন আপনার হাতের মুঠোয়</h5>
-              <h1 style="color: #0be881"><a href="{% url 'all-food-items' %}">এখনি অর্ডার করুন</a></h1>
+            <h1><a href="{% url 'all-food-items' %}">এখনি অর্ডার করুন</a></h1>
             <h6><b>স্বাস্থ্যকর | বিশুদ্ধ | সাধ্যের মধ্যে</b></h6>
               <!---- Search ---->
             <form class="search input-group mt-4" method="GET" action="{% url 'home' %}">
@@ -25,7 +25,7 @@
               <h3>সব নতুন আইটেমগুলি</h3>
             </div>
             <div class="row">
-              <div class="col-xs-12 col-md-8 mt-3">
+              <div class="col-xs-12 col-md-12 col-lg-8 mt-3">
                 <!-- loop -->
                 <div class="left-food-item p-3">
                   {% for foods in all_food_items %}
@@ -52,16 +52,16 @@
                 <!-- loop -->
                 </div>
               </div>
-              <div class="col-xs-12 col-md-4 mt-3">
-                    <div class="category text-white text-center">
-                          <h3 class="pt-3">ক্যাটাগরি</h3> <hr>
-                          {% for category in all_category %}
-                            <ul>
-                              <li>
-                                <a href="{% url 'categorywise-items' category.id %}">{{ category.category_name }}</a></li>
-                            </ul>
-                          {% endfor %}
-                      </div>
+              <div class="col-xs-12 col-md-12 col-lg-4 mt-3">
+                <div class="category text-white text-center" data-spy="scroll" data-target=".main-content">
+                  <h3 class="pt-3">ক্যাটাগরি</h3> <hr>
+                  {% for category in all_category %}
+                    <ul>
+                      <li>
+                        <a href="{% url 'categorywise-items' category.id %}">{{ category.category_name }}</a></li>
+                    </ul>
+                  {% endfor %}
+                </div>
               </div>
             </div>
           </div>

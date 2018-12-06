@@ -9,10 +9,10 @@
         <div class="card p-3">
             <h1>নতুন আইটেম যোগ করুন</h1>
 
-            <form method="post" enctype="multipart/form-data">
+            <form class="mt-3" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ add_items_info.as_p }}
-                <button class="btn btn-dark btn-sm" type="submit" style="100%">যোগ করুন</button>
+                <button class="btn btn-dark btn-sm mb-3" type="submit">যোগ করুন</button>
             </form>
 
         </div>

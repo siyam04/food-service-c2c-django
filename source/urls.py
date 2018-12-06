@@ -27,7 +27,6 @@ app_name = (
     'food_area',
     'food_order',
     'food_items',
-    # 'food_clients',
     'food_delivery',
     'food_providers',
     'food_newsletters',
@@ -36,25 +35,33 @@ app_name = (
 )
 
 urlpatterns = [
+
     # Default ADMIN URL
     path('admin/', admin.site.urls),
 
     # Home URL
-    path('home/', home, name='home'),
+    path('', home, name='home'),
 
     # App URLS
-    path('home/', include('food_area.urls')),
-    path('home/', include('food_order.urls')),
-    path('home/', include('food_items.urls')),
-    # path('home/', include('food_clients.urls')),
-    path('home/', include('food_delivery.urls')),
-    path('home/', include('food_providers.urls')),
-    path('home/', include('food_users_profile.urls')),
-
-    # Food Category
-    path('home/', include('food_items.urls')),
+    path('area/', include('food_area.urls')),
+    path('order/', include('food_order.urls')),
+    path('items/', include('food_items.urls')),
+    path('delivery/', include('food_delivery.urls')),
+    path('providers/', include('food_providers.urls')),
+    path('users/', include('food_users_profile.urls')),
 
     # Newsletter App's URL
     path('newsletter/', include('food_newsletters.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# Project source URL Debugging integration
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [
+
+        path('__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns

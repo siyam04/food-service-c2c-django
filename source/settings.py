@@ -25,13 +25,17 @@ SECRET_KEY = '800w+dy&$v4jov_60+=z%($zvwyvsuw1rfcq*qdnc6gz_*k3&f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# For Django Debug Toolbar
+INTERNAL_IPS = ['127.0.0.1']
+
 ALLOWED_HOSTS = []
 
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'workstation844@gmail.com'
-# EMAIL_HOST_PASSWORD = 'ug024015029'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+# For Sending Emails
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'workstation844@gmail.com'
+EMAIL_HOST_PASSWORD = 'ug024015029'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Application definition
@@ -43,13 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # Third party injection for View counting
+    'debug_toolbar',
 
     # Custom Apps
     'food_area',
     'food_order',
     'food_items',
-    # 'food_clients',
     'food_delivery',
     'food_providers',
     'food_newsletters',
@@ -65,6 +70,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Debug Toolbar Middleware Adding
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'source.urls'
