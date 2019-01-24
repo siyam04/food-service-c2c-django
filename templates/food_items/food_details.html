@@ -49,7 +49,7 @@
                     </table>
                     
                     <!-- Button -->
-                    <a class='btn btn-dark btn-sm mt-3 mb-0' target="_blank" href='{% url 'order-form' food_details_info.id %}' style="width: 100%">অর্ডার করুন</a>
+                    <a class='btn btn-dark btn-sm mt-3 mb-0' target="_blank" href='{% url 'order-form' food_details_info.id food_details_info.provider.id food_details_info.delivery_point.id food_details_info.area.id %}' style="width: 100%">অর্ডার করুন</a>
                     <!-- Button -->
                 </div>
             </div>

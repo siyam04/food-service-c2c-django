@@ -63,8 +63,8 @@ class FoodItems(models.Model):
 # def pre_save_receiver(instance, **kwargs):
 #     if not instance.slug and instance.name:
 #         instance.slug = slugify(instance.name)
-
-
+#
+#
 # Connecting with Signal
 # pre_save.connect(pre_save_receiver, sender=FoodItems)
 

@@ -27,8 +27,21 @@ DEBUG = True
 
 # For Django Debug Toolbar
 INTERNAL_IPS = ['127.0.0.1']
+<<<<<<< HEAD
+
+# For Server Deploying
+ALLOWED_HOSTS = ['*']
+=======
 
 ALLOWED_HOSTS = []
+
+# For Sending Emails
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'workstation844@gmail.com'
+EMAIL_HOST_PASSWORD = 'ug024015029'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+>>>>>>> 0e7e2f2b6f9a1ba73dde20ccb65777276c1b5efb
 
 # For Sending Emails
 EMAIL_HOST = 'smtp.gmail.com'
@@ -39,7 +52,6 @@ EMAIL_USE_TLS = True
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,6 +76,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    # WhiteNoise Middleware for Heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    # Debug Toolbar Middleware Adding
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,6 +162,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -153,3 +174,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+

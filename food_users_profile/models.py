@@ -20,4 +20,4 @@ class Profile(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user_name
+        return self.user.username

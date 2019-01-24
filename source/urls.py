@@ -64,4 +64,9 @@ if settings.DEBUG:
 
         path('__debug__/', include(debug_toolbar.urls)),
 
+<<<<<<< HEAD
     ] + urlpatterns
+
+=======
+    ] + urlpatterns
+>>>>>>> 0e7e2f2b6f9a1ba73dde20ccb65777276c1b5efb

@@ -13,7 +13,7 @@ class FoodCategoryAdmin(admin.ModelAdmin):
 
 class FoodItemsAdmin(admin.ModelAdmin):
     """Customizing Admin Interface"""
-    list_display = ['id', 'name', 'category', 'price', 'minimum_quantity', 'status', 'draft', 'provider',
+    list_display = ['id', 'name', 'category', 'price', 'minimum_quantity', 'slug', 'status', 'draft', 'provider',
                     'delivery_point', 'area', 'posted_at']
     list_editable = ['draft']
     list_display_links = ['name']

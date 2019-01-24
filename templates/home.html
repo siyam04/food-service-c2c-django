@@ -43,7 +43,7 @@
 
                         <!-- Button -->
                         <a class='btn btn-success btn-sm' target="_blank" href='{% url 'food-details' foods.id %}'>বিস্তারিত</a>
-                        <a class='btn btn-danger btn-sm' target="_blank" href='{% url 'order-form' foods.id %}'>অর্ডার করুন</a>
+                        <a class='btn btn-danger btn-sm' target="_blank" href='{% url 'order-form' foods.id foods.provider.id foods.delivery_point.id foods.area.id %}'>অর্ডার করুন</a>
                         <!-- Button -->
                       </div>
                     </div>

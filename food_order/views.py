@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import render, redirect
@@ -8,6 +9,10 @@ from food_order.forms import OrderForm
 from food_order.models import Order
 # Same App importing
 from food_order.models import Client
+from food_area.models import Area
+from food_delivery.models import DeliveryPoint
+from food_providers.models import CooKInfo
+from food_users_profile.models import Profile
 
 
 def order_details_info(request, id):
@@ -23,7 +28,7 @@ def order_details_info(request, id):
 
 
 @login_required(login_url='signup')
-def order_form(request, id=None):
+def order_form(request, id=None, provider_id=None, deliver_id=None, area_id=None):
     if request.method == 'POST':
         order_form_info = OrderForm(request.POST)
 
@@ -37,8 +42,14 @@ def order_form(request, id=None):
 
     else:
         food = FoodItems.objects.get(id=id)
+        profile = Profile.objects.get(user=request.user)
         initial_data = {
-            "quantity": food.minimum_quantity
+            "client_info": profile,
+            "quantity": food.minimum_quantity,
+            "food_name": FoodItems.objects.get(id=id),
+            "provider": CooKInfo.objects.get(id=provider_id),
+            "delivery_point": DeliveryPoint.objects.get(id=deliver_id),
+            "area": Area.objects.get(id=area_id)
         }
         order_form_info = OrderForm(initial=initial_data)
 
